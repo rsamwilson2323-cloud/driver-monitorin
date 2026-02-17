@@ -3,8 +3,6 @@
 A real-time Driver Monitoring System built using Python, OpenCV, MediaPipe, and YOLOv8 to enhance road safety.
 This system monitors driver drowsiness, attention, mobile phone usage, and seat belt usage through a webcam.
 
-
-
 🔍 Features
 
 👁 Eye State Detection
