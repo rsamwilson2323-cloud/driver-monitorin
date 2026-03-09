@@ -1,134 +1,171 @@
-🚗 Driver Monitoring System (Computer Vision)
+# 🚗 Driver Monitoring System (Computer Vision)
 
-A real-time Driver Monitoring System built using Python, OpenCV, MediaPipe, and YOLOv8 to enhance road safety.
-This system monitors driver drowsiness, attention, mobile phone usage, and seat belt usage through a webcam.
+Driver Monitoring System is a real-time safety system built using **Python 🐍, OpenCV 🎥, MediaPipe 🧠, and YOLOv8 🤖**.
 
-🔍 Features
+The system monitors driver behavior through a webcam to detect **drowsiness, attention level, mobile phone usage, and seat belt usage**. It provides live alerts to help improve road safety.
 
-👁 Eye State Detection
+---
 
-Detects eye open / eye closed
+# ✨ Features
 
-Calculates Eye Aspect Ratio (EAR)
+👁 **Eye State Detection**
 
-😴 Drowsiness Detection
+* Detects **eye open / eye closed**
+* Calculates **Eye Aspect Ratio (EAR)**
 
-Triggers alert if eyes remain closed for more than 2 seconds
+😴 **Drowsiness Detection**
 
-👀 Driver Attention Tracking
+* Triggers alert if eyes remain closed for more than **2 seconds**
 
-Detects whether the driver is looking forward or looking away
+👀 **Driver Attention Tracking**
 
-📱 Mobile Phone Detection
+* Detects whether the driver is **looking forward or looking away**
 
-Uses YOLOv8 to detect phone usage while driving
+📱 **Mobile Phone Detection**
 
-🪢 Seat Belt Detection
+* Uses **YOLOv8 object detection** to detect phone usage while driving
 
-Heuristic-based detection using edge detection & Hough lines
+🪢 **Seat Belt Detection**
 
-🖥 Live Monitoring Dashboard
+* Heuristic-based detection using **edge detection and Hough lines**
 
-Displays real-time alerts and driver status on screen
+🖥 **Live Monitoring Dashboard**
 
-🛠 Technologies Used
+* Displays real-time driver status and safety alerts
 
-Python 3
+---
 
-OpenCV
+# 📂 Project Structure
 
-MediaPipe (Face Mesh)
+```
+driver-monitoring-system
+│
+├── driver_monitoring.py
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
 
-YOLOv8 (Ultralytics)
+The **YOLOv8 model (yolov8n.pt)** will automatically download during the first run if not present.
 
-NumPy
+---
 
-📦 Installation
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/driver-monitoring-system.git
-cd driver-monitoring-system
+# ⚙️ Installation
 
-2️⃣ Install Required Packages
-pip install opencv-python mediapipe numpy ultralytics
+## 1️⃣ Clone the Repository
 
-3️⃣ Download YOLOv8 Model
+```
+git clone https://github.com/rsamwilson2323-cloud/driver-monitorin.git
+cd driver-monitorin
+```
 
-The code uses:
+---
 
-yolov8n.pt
+## 2️⃣ Install Dependencies
 
+```
+pip install -r requirements.txt
+```
 
-It will auto-download on first run, or you can manually place it in the project folder.
+---
 
-▶️ How to Run
+# 📦 Requirements
+
+Main libraries used:
+
+```
+opencv-python
+mediapipe
+numpy
+ultralytics
+```
+
+---
+
+# ▶️ Usage
+
+Run the system using:
+
+```
 python driver_monitoring.py
+```
 
+📷 The webcam will start automatically.
 
-Webcam will start automatically
+To stop the program:
 
-Press ENTER to exit the application
+**Press ENTER ⏎**
 
-🧠 How It Works
-👁 Eye Aspect Ratio (EAR)
+---
 
-Uses facial landmarks from MediaPipe
+# 🧠 How It Works
 
-Detects eye closure duration to identify drowsiness
+👁 **Eye Aspect Ratio (EAR)**
+Uses facial landmarks from **MediaPipe Face Mesh** to detect eye closure and identify drowsiness.
 
-👃 Head Position (Attention)
+👀 **Head Position (Attention)**
+Tracks nose tip movement to determine whether the driver is **looking forward or away from the road**.
 
-Tracks nose tip movement
+📱 **Object Detection (YOLOv8)**
+Detects **mobile phone usage** in real time using YOLOv8.
 
-Determines if driver is looking away from the road
+🪢 **Seat Belt Detection**
+Uses **Canny Edge Detection and Hough Transform** to detect diagonal lines across the chest area representing a seat belt.
 
-📱 Object Detection (YOLOv8)
+---
 
-Detects cell phone usage in real time
+# ⚠️ Alerts Displayed
 
-🪢 Seat Belt Detection
+The system may display alerts such as:
 
-Detects diagonal lines across chest region
+* **EYE CLOSED**
+* **DROWSINESS ALERT**
+* **LOOKING AWAY**
+* **PHONE USAGE: YES**
+* **SEAT BELT: NOT WORN**
 
-Uses Canny Edge Detection + Hough Transform
+---
 
-⚠️ Alerts Displayed
+# 📸 Example Output
 
-EYE CLOSED
-
-DROWSINESS ALERT
-
-LOOKING AWAY
-
-PHONE USAGE: YES
-
-SEAT BELT: NOT WORN
-
-📸 Output Example
+```
 Eye: EYE OPEN
 Attention: LOOKING FORWARD
 Seat Belt: WORN
 Phone Usage: NO
+```
 
-🚀 Future Improvements
+---
+
+# 🚀 Future Improvements
 
 🔊 Sound alert for drowsiness
-
 📊 Driver behavior logging
-
 🧠 Deep learning-based seat belt detection
+🚘 Integration with vehicle safety systems
+📱 Mobile or embedded system deployment
 
-🚘 Integration with vehicle systems
+---
 
-📱 Mobile / Embedded deployment
+# ⚠️ Disclaimer
 
-⚖️ Disclaimer
-
-This project is for educational and research purposes only.
+This project is intended for **educational and research purposes only**.
 It should not be used as a replacement for professional driver safety systems.
 
-👨‍💻 Author
+---
 
-Sam Wilson
-📧 Email: rsamwilson2323@gmail.com
-🖇️ LinkedIn: https://www.linkedin.com/in/sam-wilson-14b554385
-🔗 GitHub: https://github.com/rsamwilson2323-cloud
+# 👨‍💻 Author
+
+**Sam Wilson**
+
+🌐 GitHub
+https://github.com/rsamwilson2323-cloud
+
+💼 LinkedIn
+https://www.linkedin.com/in/sam-wilson-14b554385
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
