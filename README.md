@@ -11,6 +11,7 @@ The system monitors driver behavior through a webcam to detect **drowsiness, att
 👁 **Eye State Detection**
 
 * Detects **eye open / eye closed**
+  
 * Calculates **Eye Aspect Ratio (EAR)**
 
 😴 **Drowsiness Detection**
